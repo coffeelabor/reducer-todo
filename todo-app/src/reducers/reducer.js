@@ -1,3 +1,5 @@
+import { TOGGLE_TODO } from "../components/types";
+
 export const initialState = {
   todos: [
     {
@@ -40,13 +42,15 @@ export const reducer = (state, action) => {
         ...state,
         todos: [...state.todos, newTodo]
       };
-    case "TOGGLE_TODO":
+    case TOGGLE_TODO:
+      console.log("TOGGLE payload", action.payload);
       return {
         // ...state,
         todos: state.todos.map(todo => {
           if (action.payload === todo.id) {
-            return { completed: true };
-            // return { completed: !todo.completed };
+            // return { completed: true };
+
+            return { ...todo, completed: !todo.completed };
           }
           return todo;
         })

@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import TodoList from "./components/TodoList";
 import AddForm from "./components/AddForm";
 import { reducer, initialState } from "./reducers/reducer";
+import { TOGGLE_TODO } from "./components/types";
 import "./App.css";
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
   };
 
   const toggleTodo = todoId => {
-    dispatch({ type: "TOGGLE_TODO", payload: todoId });
+    dispatch({ type: TOGGLE_TODO, payload: todoId });
   };
 
   const clearTodo = e => {
