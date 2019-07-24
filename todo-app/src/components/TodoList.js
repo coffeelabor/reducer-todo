@@ -5,9 +5,14 @@ const TodoList = props => {
   console.log("TodoList Props", props);
   return (
     <div>
-      <h2>Howdy</h2>
+      <h2>Todo Checklist</h2>
       {props.todos.map(todo => (
-        <Todo key={todo.id} item={todo.item} toggleTodo={props.toggleTodo} />
+        <Todo
+          key={todo.id}
+          item={todo.item}
+          completed={todo.completed}
+          toggleTodo={props.toggleTodo}
+        />
       ))}
       <button onClick={props.clearTodo}>Clear it!</button>
     </div>

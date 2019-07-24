@@ -6,10 +6,11 @@ const Todo = props => {
     <div>
       <h3>hi</h3>
       <div
-        className={`${props.item.completed ? "completed" : ""}`}
-        onClick={() => props.toggleTodo(props.item.id)}
+        className={`${props.completed ? "completed" : ""}`}
+        onClick={() => props.toggleTodo(props.id)}
       >
         <p>{props.item}</p>
+        <p>{`${props.completed}`}</p>
       </div>
     </div>
   );

@@ -42,10 +42,11 @@ export const reducer = (state, action) => {
       };
     case "TOGGLE_TODO":
       return {
-        ...state,
+        // ...state,
         todos: state.todos.map(todo => {
           if (action.payload === todo.id) {
-            return { ...todo, completed: !todo.completed };
+            return { completed: true };
+            // return { completed: !todo.completed };
           }
           return todo;
         })
